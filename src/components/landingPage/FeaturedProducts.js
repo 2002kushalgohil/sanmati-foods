@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import { Button } from "../ui/button";
+import ProductCard from "../products/ProductCard";
 
 function FeaturedProducts() {
   const allCategories = [
@@ -40,31 +41,7 @@ function FeaturedProducts() {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-8 w-full">
         {allCategories.map((data, index) => {
-          return (
-            <div
-              key={index}
-              className="bg-white rounded-lg shadow-md hover:shadow-xl transition-all flex flex-col overflow-hidden"
-            >
-              <div className="overflow-hidden w-full">
-                <img
-                  src={data.imageSrc}
-                  alt="product"
-                  className="h-48 md:h-52 w-full object-cover"
-                />
-              </div>
-              <div className="space-y-2 w-full flex-grow p-3 md:p-5">
-                <h3 className="text-xl md:text-2xl font-medium">
-                  {data.label}
-                </h3>
-                <p className="text-sm md:text-base">{data.description}</p>
-              </div>
-              <div className="mt-auto p-3 md:p-5">
-                <Button variant="link" className="pl-0">
-                  Explore more
-                </Button>
-              </div>
-            </div>
-          );
+          return <ProductCard key={index} data={data} />;
         })}
       </div>
 

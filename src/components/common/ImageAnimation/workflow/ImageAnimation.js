@@ -38,7 +38,7 @@ export default function ImageAnimation({ imageLinks }) {
           <motion.div
             style={{ y, rotate }}
             key={`i_${i}`}
-            className={styles.imageContainer}
+            className={styles.imageContainer + " rounded-lg md:rounded-none overflow-hidden"}
           >
             <img src={imageLinks[i]} alt="image" />
           </motion.div>

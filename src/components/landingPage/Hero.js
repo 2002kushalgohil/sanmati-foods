@@ -26,7 +26,7 @@ function Hero() {
             rel="noreferrer"
           >
             <Button className="hero-item px-8 shadow-md hover:shadow-lg transition-all">
-              Contact us
+              View products
             </Button>
           </Link>
         </div>

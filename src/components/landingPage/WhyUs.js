@@ -6,18 +6,6 @@ import { useInView } from "react-intersection-observer";
 function WhyUs() {
   const stats = [
     {
-      title: "Happy Customers",
-      value: 1005,
-    },
-    {
-      title: "Hours spent on craft",
-      value: 5000,
-    },
-    {
-      title: "Packs of sanmati products sold each year",
-      value: 170,
-    },
-    {
       title: "Some random text",
       value: 15,
     },
@@ -29,11 +17,23 @@ function WhyUs() {
       title: "Some random text long sold each year",
       value: 17,
     },
+    {
+      title: "Happy Customers",
+      value: 1005,
+    },
+    {
+      title: "Hours spent on craft",
+      value: 5000,
+    },
+    {
+      title: "Packs of sanmati products sold each year",
+      value: 170,
+    },
   ];
 
   const { ref, inView } = useInView({
     triggerOnce: true,
-    threshold: 0.3,
+    threshold: 0.5,
   });
 
   return (
@@ -54,8 +54,9 @@ function WhyUs() {
         {stats.map((data, index) => (
           <div
             key={index}
-            className="text-center flex flex-col items-center justify-center gap-2"
+            className="text-center flex flex-col items-center justify-center gap-1 md:gap-3"
           >
+            <img src="/landingPage/spices.png" className="w-20 mb-1 md:mb-4" alt="Icon" />
             <h2 className="text-4xl md:text-6xl !z-20">
               <CountUp
                 start={inView ? 0 : undefined}

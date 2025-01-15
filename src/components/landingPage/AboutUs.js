@@ -41,7 +41,7 @@ function AboutUs() {
             rel="noreferrer"
           >
             <Button className="hero-item px-8 shadow-md hover:shadow-lg transition-all">
-              Read More
+              Read more
             </Button>
           </Link>
         </div>

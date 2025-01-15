@@ -13,13 +13,6 @@ export const companyLinks = [
     changeFrequency: "monthly",
     priority: 0.7,
   },
-  {
-    label: "FAQs",
-    href: "/faqs",
-    isDropdown: false,
-    changeFrequency: "yearly",
-    priority: 0.5,
-  },
 ];
 
 export const resourcesLinks = [
