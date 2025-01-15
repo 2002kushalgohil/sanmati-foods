@@ -49,7 +49,7 @@ function FeaturedProducts() {
                 <img
                   src={data.imageSrc}
                   alt="product"
-                  className="h-40 md:h-52 w-full object-cover"
+                  className="h-48 md:h-52 w-full object-cover"
                 />
               </div>
               <div className="space-y-2 w-full flex-grow p-3 md:p-5">
