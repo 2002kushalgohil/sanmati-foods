@@ -21,11 +21,13 @@ function Hero() {
           </p>
 
           <Link
-            href="https://share-eu1.hsforms.com/1BKnD_8-3QWWoUWZQnuJtMw2b2gjn"
+            href="/"
             target="_blank"
             rel="noreferrer"
           >
-            <Button className="hero-item px-8">Contact us</Button>
+            <Button className="hero-item px-8 shadow-md hover:shadow-lg transition-all">
+              Contact us
+            </Button>
           </Link>
         </div>
         <div className="flex flex-col items-end h-full w-full justify-center gap-5 md:gap-7 order-1 md:order-2">

@@ -94,7 +94,7 @@ function Footer() {
       </div>
 
       <div className="globalPadding !pt-0 !pb-4 text-center">
-        <p className="text-sm md:text-base">
+        <p className="text-sm">
           Designed and developed by:{" "}
           {LinkGenerator("RUDISN", "https://www.rudisn.com/", true)}
         </p>

@@ -136,7 +136,7 @@ const NavBar = () => {
           </div>
           <div className="flex items-center justify-center gap-5">
             <Link
-              href="https://share-eu1.hsforms.com/1BKnD_8-3QWWoUWZQnuJtMw2b2gjn"
+              href="/"
               target="_blank"
               rel="noreferrer"
             >
