@@ -81,7 +81,7 @@ function Footer() {
         </div>
       </footer>
 
-      <div className="globalPadding text-xs md:text-balance !py-6 bg-[var(--secondary-bg-color)] flex flex-col md:flex-row items-center justify-between gap-7">
+      <div className="globalPadding text-xs md:text-balance !py-6 flex flex-col md:flex-row items-center justify-between gap-7">
         <p>
           Copyright &#169; 2020 - {new Date().getFullYear()}. Sanmati foods and
           spices.
