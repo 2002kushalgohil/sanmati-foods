@@ -65,3 +65,5 @@ function TraditionalRecipes() {
     </div>
   );
 }
+
+export default TraditionalRecipes

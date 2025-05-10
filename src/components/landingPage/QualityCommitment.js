@@ -46,3 +46,5 @@ function QualityCommitment() {
     </div>
   );
 }
+
+export default QualityCommitment

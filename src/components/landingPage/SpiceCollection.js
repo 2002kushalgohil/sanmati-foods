@@ -55,3 +55,5 @@ function SpiceCollection() {
     </div>
   );
 }
+
+export default SpiceCollection
