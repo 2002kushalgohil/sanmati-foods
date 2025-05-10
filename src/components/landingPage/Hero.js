@@ -78,7 +78,7 @@ function Hero() {
         >
           <img 
             src="/landingPage/hero.png" 
-            className="w-full object-cover rounded-lg shadow-2xl"
+            className="w-full object-cover"
             alt="Collection of premium Indian spices"
           />
         </motion.div>
