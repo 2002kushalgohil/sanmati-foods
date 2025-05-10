@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
 
 body {
   font-family: 'Inter', sans-serif;
@@ -10,48 +10,48 @@ body {
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 0 0% 10%;
+    --background: 40 33% 98%;
+    --foreground: 20 12% 12%;
     --card: 0 0% 100%;
-    --card-foreground: 0 0% 10%;
+    --card-foreground: 20 12% 12%;
     --popover: 0 0% 100%;
-    --popover-foreground: 0 0% 10%;
-    --primary: 0 0% 15%;
+    --popover-foreground: 20 12% 12%;
+    --primary: 25 95% 53%;
     --primary-foreground: 0 0% 100%;
-    --secondary: 0 0% 96%;
-    --secondary-foreground: 0 0% 15%;
-    --muted: 0 0% 96%;
-    --muted-foreground: 0 0% 45%;
-    --accent: 0 0% 92%;
-    --accent-foreground: 0 0% 15%;
+    --secondary: 30 50% 97%;
+    --secondary-foreground: 20 12% 12%;
+    --muted: 30 50% 97%;
+    --muted-foreground: 20 12% 40%;
+    --accent: 28 100% 97%;
+    --accent-foreground: 20 12% 12%;
     --destructive: 0 84% 60%;
     --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 92%;
-    --input: 0 0% 92%;
-    --ring: 0 0% 15%;
-    --radius: 0.25rem;
+    --border: 20 12% 92%;
+    --input: 20 12% 92%;
+    --ring: 25 95% 53%;
+    --radius: 0.5rem;
   }
 
   .dark {
-    --background: 0 0% 10%;
-    --foreground: 0 0% 100%;
-    --card: 0 0% 10%;
-    --card-foreground: 0 0% 100%;
-    --popover: 0 0% 10%;
-    --popover-foreground: 0 0% 100%;
-    --primary: 0 0% 98%;
-    --primary-foreground: 0 0% 10%;
-    --secondary: 0 0% 15%;
-    --secondary-foreground: 0 0% 100%;
-    --muted: 0 0% 15%;
-    --muted-foreground: 0 0% 65%;
-    --accent: 0 0% 15%;
-    --accent-foreground: 0 0% 100%;
+    --background: 20 12% 8%;
+    --foreground: 0 0% 98%;
+    --card: 20 12% 8%;
+    --card-foreground: 0 0% 98%;
+    --popover: 20 12% 8%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 25 95% 53%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 20 12% 12%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 20 12% 12%;
+    --muted-foreground: 20 12% 65%;
+    --accent: 20 12% 12%;
+    --accent-foreground: 0 0% 98%;
     --destructive: 0 62% 30%;
-    --destructive-foreground: 0 0% 100%;
-    --border: 0 0% 15%;
-    --input: 0 0% 15%;
-    --ring: 0 0% 85%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 20 12% 12%;
+    --input: 20 12% 12%;
+    --ring: 25 95% 53%;
   }
 }
 
@@ -62,10 +62,13 @@ body {
   body {
     @apply bg-background text-foreground;
   }
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+  }
 }
 
 .globalPadding {
-  @apply px-6 py-12 md:px-12 md:py-24 w-full;
+  @apply px-6 py-16 md:px-12 md:py-24 w-full;
 }
 
 ::placeholder {
@@ -74,4 +77,8 @@ body {
 
 .transition-standard {
   @apply transition-all duration-300 ease-in-out;
+}
+
+.spice-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23D4A574' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
 }
