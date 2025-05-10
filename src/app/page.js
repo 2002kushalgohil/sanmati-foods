@@ -1,5 +1,4 @@
 import AboutUs from "@/components/landingPage/AboutUs";
-import CTA from "@/components/landingPage/CTA";
 import Hero from "@/components/landingPage/Hero";
 import QualityCommitment from "@/components/landingPage/QualityCommitment";
 import SpiceCollection from "@/components/landingPage/SpiceCollection";
@@ -18,7 +17,6 @@ function Page() {
       <TraditionalRecipes />
       <Testimonials />
       <WhyUs />
-      <CTA />
     </>
   );
 }
