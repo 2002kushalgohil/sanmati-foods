@@ -41,22 +41,7 @@ export default {
         },
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
-        ring: 'hsl(var(--ring))',
-        gold: {
-          light: '#D4AF37',
-          DEFAULT: '#B8860B',
-          dark: '#996515'
-        },
-        burgundy: {
-          light: '#9B2335',
-          DEFAULT: '#800020',
-          dark: '#6B001A'
-        },
-        emerald: {
-          light: '#50C878',
-          DEFAULT: '#046307',
-          dark: '#034E05'
-        }
+        ring: 'hsl(var(--ring))'
       },
       borderRadius: {
         lg: 'var(--radius)',
@@ -64,12 +49,7 @@ export default {
         sm: 'calc(var(--radius) - 4px)'
       },
       fontFamily: {
-        serif: ['Playfair Display', 'serif'],
-        sans: ['Poppins', 'sans-serif']
-      },
-      boxShadow: {
-        'luxury': '0 4px 20px -2px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06)',
-        'luxury-hover': '0 10px 30px -3px rgba(0, 0, 0, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.08)'
+        sans: ['Inter', 'sans-serif']
       }
     }
   },
