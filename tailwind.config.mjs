@@ -51,6 +51,10 @@ export default {
       fontFamily: {
         sans: ['Inter', 'sans-serif'],
         serif: ['Playfair Display', 'serif']
+      },
+      spacing: {
+        'section': '8rem',
+        'content': '4rem'
       }
     }
   },
