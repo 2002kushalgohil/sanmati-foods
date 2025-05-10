@@ -122,6 +122,7 @@ function AboutPage() {
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
+                whileHover={{ y: -5 }}
                 className="relative flex-none w-80 snap-center"
               >
                 {/* Timeline Node */}
@@ -129,17 +130,22 @@ function AboutPage() {
                 
                 {/* Arrow */}
                 {index < milestones.length - 1 && (
-                  <div className="absolute top-1/2 -translate-y-1/2 left-[calc(100%-2rem)]">
+                  <motion.div 
+                    initial={{ opacity: 0, x: -10 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 0.5 }}
+                    className="absolute top-1/2 -translate-y-1/2 left-[calc(100%-2rem)]"
+                  >
                     <ArrowRight className="w-8 h-8 text-primary/40" />
-                  </div>
+                  </motion.div>
                 )}
 
-                <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+                <div className="bg-white rounded-lg shadow-md p-6 mb-8 transition-all duration-300 hover:shadow-xl">
                   <div className="w-full h-40 rounded-lg overflow-hidden mb-4">
                     <img
                       src={milestone.image}
                       alt={milestone.title}
-                      className="w-full h-full object-cover"
+                      className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
                     />
                   </div>
                   <div className="flex items-center gap-2 mb-2">
