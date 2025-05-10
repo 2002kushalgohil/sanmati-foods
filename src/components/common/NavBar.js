@@ -26,7 +26,29 @@ const NavMenu = () => {
   return (
     <NavigationMenu>
       <NavigationMenuList className="gap-0 lg:gap-3">
-        {[...companyLinks, ...resourcesLinks].map((link, index) => {
+        <NavigationMenuItem>
+          <NavigationMenuLink
+            href="/"
+            className={`${navigationMenuTriggerStyle()} ${
+              pathname === "/" ? "bg-primary text-white hover:bg-primary/90 hover:text-white" : ""
+            }`}
+          >
+            Home
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+
+        <NavigationMenuItem>
+          <NavigationMenuLink
+            href="/about"
+            className={`${navigationMenuTriggerStyle()} ${
+              pathname === "/about" ? "bg-primary text-white hover:bg-primary/90 hover:text-white" : ""
+            }`}
+          >
+            About
+          </NavigationMenuLink>
+        </NavigationMenuItem>
+
+        {resourcesLinks.map((link, index) => {
           const isActive = (link) => {
             if (link?.href) {
               return pathname === link.href;
@@ -60,9 +82,7 @@ const NavMenu = () => {
                         className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
                         href={child.href}
                         target={child?.isNewPage ? "_blank" : "_self"}
-                        rel={
-                          child?.isNewPage ? "noopener noreferrer" : undefined
-                        }
+                        rel={child?.isNewPage ? "noopener noreferrer" : undefined}
                       >
                         <div className="text-sm font-medium leading-none">
                           {child.label}
@@ -95,7 +115,6 @@ const NavMenu = () => {
 
 const NavBar = () => {
   const pathname = usePathname();
-
   const [isFullNav, setIsFullNav] = useState(false);
 
   const toggleNavbar = () => {
@@ -122,36 +141,26 @@ const NavBar = () => {
 
   return (
     <>
-      <>
-        <nav className="globalPadding sticky top-0 left-0 w-full !py-5 z-50 flex items-center justify-between gap-10 transition-all duration-200 bg-white border-b-[1px]">
-          <Link href="/">
-            <img
-              src="logo.png"
-              className="w-full max-w-24 md:w-36"
-              alt="Logo"
-            />
+      <nav className="globalPadding sticky top-0 left-0 w-full !py-5 z-50 flex items-center justify-between gap-10 transition-all duration-200 bg-white border-b-[1px]">
+        <Link href="/">
+          <img src="/logo.png" className="w-full max-w-24 md:w-36" alt="Logo" />
+        </Link>
+        <div className="hidden lg:block">
+          <NavMenu />
+        </div>
+        <div className="flex items-center justify-center gap-5">
+          <Link href="/contact">
+            <Button className="px-4 md:px-8">Contact us</Button>
           </Link>
-          <div className="hidden lg:block">
-            <NavMenu />
-          </div>
-          <div className="flex items-center justify-center gap-5">
-            <Link
-              href="/"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Button className="px-4 md:px-8">Contact us</Button>
-            </Link>
-            <Button
-              onClick={toggleNavbar}
-              variant="ghost"
-              className="flex lg:hidden bg-primary text-white px-3"
-            >
-              {isFullNav ? <XIcon /> : <MenuIcon />}
-            </Button>
-          </div>
-        </nav>
-      </>
+          <Button
+            onClick={toggleNavbar}
+            variant="ghost"
+            className="flex lg:hidden bg-primary text-white px-3"
+          >
+            {isFullNav ? <XIcon /> : <MenuIcon />}
+          </Button>
+        </div>
+      </nav>
 
       {/* Mobile Version with Accordion as Navbar and Sub Navbar */}
       <nav
@@ -164,11 +173,7 @@ const NavBar = () => {
       >
         <div className="w-full flex items-center justify-between">
           <Link href="/">
-            <img
-              src="logo.png"
-              className="w-full max-w-24 md:w-36"
-              alt="Logo"
-            />
+            <img src="/logo.png" className="w-full max-w-24 md:w-36" alt="Logo" />
           </Link>
           <Button
             onClick={toggleNavbar}
@@ -182,32 +187,50 @@ const NavBar = () => {
         {/* Accordion for Navbar Items */}
         <div className="w-full h-full mt-10">
           <Accordion type="single" collapsible className="w-full">
-            {[...companyLinks, ...resourcesLinks].map((link, index) =>
+            <AccordionItem value="item-home">
+              <Link
+                href="/"
+                className={`flex flex-1 items-center justify-between py-4 text-sm font-medium hover:underline text-left ${
+                  pathname === "/" ? "text-primary" : ""
+                }`}
+              >
+                Home
+              </Link>
+            </AccordionItem>
+
+            <AccordionItem value="item-about">
+              <Link
+                href="/about"
+                className={`flex flex-1 items-center justify-between py-4 text-sm font-medium hover:underline text-left ${
+                  pathname === "/about" ? "text-primary" : ""
+                }`}
+              >
+                About
+              </Link>
+            </AccordionItem>
+
+            {resourcesLinks.map((link, index) =>
               link.isDropdown ? (
                 <AccordionItem key={index} value={`item-${index}`}>
                   <AccordionTrigger>{link.label}</AccordionTrigger>
                   <AccordionContent>
                     <ul className="space-y-2">
-                      {link.children.map((child, idx) => {
-                        return (
-                          <li key={idx}>
-                            <Link
-                              href={child.href}
-                              className={`block text-sm p-3 hover:bg-accent rounded-sm ${
-                                isActive(child) ? "text-primary" : ""
-                              }`}
-                              target={child?.isNewPage ? "_blank" : "_self"}
-                              rel={
-                                child?.isNewPage
-                                  ? "noopener noreferrer"
-                                  : undefined
-                              }
-                            >
-                              <div className="font-medium">{child.label}</div>
-                            </Link>
-                          </li>
-                        );
-                      })}
+                      {link.children.map((child, idx) => (
+                        <li key={idx}>
+                          <Link
+                            href={child.href}
+                            className={`block text-sm p-3 hover:bg-accent rounded-sm ${
+                              isActive(child) ? "text-primary" : ""
+                            }`}
+                            target={child?.isNewPage ? "_blank" : "_self"}
+                            rel={
+                              child?.isNewPage ? "noopener noreferrer" : undefined
+                            }
+                          >
+                            <div className="font-medium">{child.label}</div>
+                          </Link>
+                        </li>
+                      ))}
                     </ul>
                   </AccordionContent>
                 </AccordionItem>
