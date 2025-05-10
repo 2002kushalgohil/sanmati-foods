@@ -42,30 +42,6 @@ const milestones = [
   }
 ];
 
-const values = [
-  {
-    icon: Heart,
-    title: "Tradition",
-    description: "Preserving authentic Indian flavors through generations of expertise",
-    color: "bg-amber-50",
-    iconColor: "text-amber-600"
-  },
-  {
-    icon: Target,
-    title: "Quality",
-    description: "Uncompromising standards in every blend we create",
-    color: "bg-red-50",
-    iconColor: "text-red-600"
-  },
-  {
-    icon: Users,
-    title: "Community",
-    description: "Supporting local farmers and enriching communities",
-    color: "bg-emerald-50",
-    iconColor: "text-emerald-600"
-  }
-];
-
 const teamMembers = [
   {
     name: "Rajesh Patel",
@@ -84,24 +60,6 @@ const teamMembers = [
     role: "Quality Director",
     image: "https://images.pexels.com/photos/2379004/pexels-photo-2379004.jpeg",
     quote: "Quality is not just a standard, it's our heritage."
-  }
-];
-
-const awards = [
-  {
-    year: "2023",
-    title: "Best Spice Brand",
-    organization: "Food & Beverage Excellence Awards"
-  },
-  {
-    year: "2022",
-    title: "Quality Excellence",
-    organization: "Indian Spice Board"
-  },
-  {
-    year: "2021",
-    title: "Business Innovation",
-    organization: "Maharashtra Chamber of Commerce"
   }
 ];
 
@@ -126,45 +84,6 @@ function AboutPage() {
             Our Story
           </Button>
         </motion.div>
-      </div>
-
-      {/* Values Section */}
-      <div className="globalPadding bg-white">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="max-w-6xl mx-auto text-center mb-16"
-        >
-          <span className="text-primary font-medium mb-4 block">Our Core Values</span>
-          <h2 className="mb-6">Guided by Tradition, Driven by Excellence</h2>
-          <p className="text-gray-600">
-            Our values are deeply rooted in Indian culture and traditions,
-            guiding every decision we make and every product we create.
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-          {values.map((value, index) => {
-            const Icon = value.icon;
-            return (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.2 }}
-                className={`${value.color} rounded-xl p-8 text-center transition-all hover:shadow-lg`}
-              >
-                <div className="inline-flex items-center justify-center w-16 h-16 rounded-full bg-white mb-6">
-                  <Icon className={`w-8 h-8 ${value.iconColor}`} />
-                </div>
-                <h3 className="text-xl font-bold mb-4">{value.title}</h3>
-                <p className="text-gray-600">{value.description}</p>
-              </motion.div>
-            );
-          })}
-        </div>
       </div>
 
       {/* Timeline Section */}
@@ -262,40 +181,6 @@ function AboutPage() {
               <h3 className="text-xl font-bold mb-2">{member.name}</h3>
               <p className="text-primary mb-4">{member.role}</p>
               <p className="text-gray-600 italic">&ldquo;{member.quote}&rdquo;</p>
-            </motion.div>
-          ))}
-        </div>
-      </div>
-
-      {/* Awards Section */}
-      <div className="globalPadding bg-[var(--secondary-bg-color)]">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          className="text-center mb-16"
-        >
-          <span className="text-primary font-medium mb-4 block">Recognition</span>
-          <h2 className="mb-6">Our Achievements</h2>
-          <p className="text-gray-600 max-w-2xl mx-auto">
-            Recognition that reflects our commitment to quality and excellence.
-          </p>
-        </motion.div>
-
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-4xl mx-auto">
-          {awards.map((award, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              transition={{ delay: index * 0.2 }}
-              className="bg-white rounded-xl p-6 text-center hover:shadow-lg transition-all"
-            >
-              <Award className="w-12 h-12 text-primary mx-auto mb-4" />
-              <p className="text-primary font-medium mb-2">{award.year}</p>
-              <h3 className="text-xl font-bold mb-2">{award.title}</h3>
-              <p className="text-gray-600 text-sm">{award.organization}</p>
             </motion.div>
           ))}
         </div>
