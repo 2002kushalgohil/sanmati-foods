@@ -168,7 +168,7 @@ function AboutPage() {
       </div>
 
       {/* Timeline Section */}
-      <div className="globalPadding bg-[var(--secondary-bg-color)] overflow-hidden">
+      <div className="globalPadding bg-[var(--secondary-bg-color)]">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -183,33 +183,22 @@ function AboutPage() {
           </p>
         </motion.div>
 
-        <div className="relative max-w-6xl mx-auto">
-          <div className="absolute top-1/2 left-0 w-full h-0.5 bg-primary/20" />
+        <div className="relative max-w-3xl mx-auto">
+          <div className="absolute left-1/2 top-0 bottom-0 w-0.5 bg-primary/20 -translate-x-1/2" />
 
-          <div className="flex flex-nowrap gap-8 overflow-x-auto pb-8 px-4 snap-x snap-mandatory">
-            {milestones.map((milestone, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                whileHover={{ y: -5 }}
-                className="relative flex-none w-80 snap-center"
-              >
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-4 h-4 bg-primary rounded-full shadow-lg z-10" />
-                
-                {index < milestones.length - 1 && (
-                  <motion.div 
-                    initial={{ opacity: 0, x: -10 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.5 }}
-                    className="absolute top-1/2 -translate-y-1/2 left-[calc(100%-2rem)]"
-                  >
-                    <ArrowRight className="w-8 h-8 text-primary/40" />
-                  </motion.div>
-                )}
-
-                <div className="bg-white rounded-xl shadow-md p-6 mb-8 transition-all duration-300 hover:shadow-xl">
+          {milestones.map((milestone, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.2 }}
+              className={`relative flex items-center gap-8 mb-16 ${
+                index % 2 === 0 ? 'flex-row' : 'flex-row-reverse'
+              }`}
+            >
+              <div className="w-1/2">
+                <div className="bg-white rounded-xl shadow-md p-6 transition-all hover:shadow-xl">
                   <div className="w-full h-40 rounded-lg overflow-hidden mb-4">
                     <img
                       src={milestone.image}
@@ -226,9 +215,13 @@ function AboutPage() {
                   <h3 className="text-xl font-bold mb-2">{milestone.title}</h3>
                   <p className="text-gray-600 text-sm">{milestone.description}</p>
                 </div>
-              </motion.div>
-            ))}
-          </div>
+              </div>
+
+              <div className="absolute left-1/2 -translate-x-1/2 w-4 h-4 bg-primary rounded-full shadow-lg z-10" />
+
+              <div className="w-1/2" />
+            </motion.div>
+          ))}
         </div>
       </div>
 
