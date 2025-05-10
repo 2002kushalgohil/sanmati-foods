@@ -1,10 +1,12 @@
 import AboutUs from "@/components/landingPage/AboutUs";
+import Blog from "@/components/landingPage/Blog";
 import CTA from "@/components/landingPage/CTA";
 import Hero from "@/components/landingPage/Hero";
-import WhyUs from "@/components/landingPage/WhyUs";
-import SpiceCollection from "@/components/landingPage/SpiceCollection";
 import QualityCommitment from "@/components/landingPage/QualityCommitment";
+import SpiceCollection from "@/components/landingPage/SpiceCollection";
+import Testimonials from "@/components/landingPage/Testimonials";
 import TraditionalRecipes from "@/components/landingPage/TraditionalRecipes";
+import WhyUs from "@/components/landingPage/WhyUs";
 import React from "react";
 
 function Page() {
@@ -15,6 +17,8 @@ function Page() {
       <SpiceCollection />
       <QualityCommitment />
       <TraditionalRecipes />
+      <Testimonials />
+      <Blog />
       <WhyUs />
       <CTA />
     </>
