@@ -1,5 +1,4 @@
 import AboutUs from "@/components/landingPage/AboutUs";
-import Blog from "@/components/landingPage/Blog";
 import CTA from "@/components/landingPage/CTA";
 import Hero from "@/components/landingPage/Hero";
 import QualityCommitment from "@/components/landingPage/QualityCommitment";
@@ -18,11 +17,8 @@ function Page() {
       <QualityCommitment />
       <TraditionalRecipes />
       <Testimonials />
-      <Blog />
       <WhyUs />
       <CTA />
     </>
   );
 }
-
-export default Page;

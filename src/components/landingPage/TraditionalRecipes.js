@@ -4,16 +4,16 @@ import { Button } from "../ui/button";
 function TraditionalRecipes() {
   const recipes = [
     {
-      name: "Butter Chicken",
+      name: "Paneer Butter Masala",
       difficulty: "Medium",
-      time: "45 mins",
-      image: "https://images.pexels.com/photos/7625056/pexels-photo-7625056.jpeg"
+      time: "35 mins",
+      image: "https://images.pexels.com/photos/9797029/pexels-photo-9797029.jpeg"
     },
     {
-      name: "Biryani",
+      name: "Vegetable Biryani",
       difficulty: "Advanced",
-      time: "60 mins",
-      image: "https://images.pexels.com/photos/12737656/pexels-photo-12737656.jpeg"
+      time: "50 mins",
+      image: "https://images.pexels.com/photos/7625318/pexels-photo-7625318.jpeg"
     },
     {
       name: "Dal Tadka",
@@ -26,10 +26,10 @@ function TraditionalRecipes() {
   return (
     <div className="globalPadding bg-white">
       <div className="text-center mb-12">
-        <h2 className="text-3xl md:text-5xl font-bold mb-4">Traditional Indian Recipes</h2>
+        <h2 className="text-3xl md:text-5xl font-bold mb-4">Traditional Vegetarian Recipes</h2>
         <p className="text-sm md:text-lg text-gray-600 max-w-2xl mx-auto">
-          Discover authentic Indian recipes using Gurudev Masala spices. From classic curries
-          to modern fusion dishes, create restaurant-style meals at home.
+          Discover authentic Indian vegetarian recipes using Gurudev Masala spices. Create 
+          restaurant-style dishes in your own kitchen with our expert blends.
         </p>
       </div>
 
