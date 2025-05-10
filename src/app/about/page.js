@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { motion } from "framer-motion";
-import { Calendar, Users, Target, Heart } from "lucide-react";
+import { Calendar, Users, Target, Heart, ArrowRight } from "lucide-react";
 
 const milestones = [
   {
@@ -97,12 +97,12 @@ function AboutPage() {
       </div>
 
       {/* Timeline Section */}
-      <div className="globalPadding bg-white">
+      <div className="globalPadding bg-white overflow-hidden">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          className="max-w-4xl mx-auto text-center mb-16"
+          className="max-w-6xl mx-auto text-center mb-16"
         >
           <h2 className="mb-6">Our Journey Through Time</h2>
           <p className="text-gray-600">
@@ -111,35 +111,49 @@ function AboutPage() {
           </p>
         </motion.div>
 
-        <div className="max-w-5xl mx-auto">
-          {milestones.map((milestone, index) => (
-            <motion.div
-              key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className="flex items-center gap-8 mb-12"
-            >
-              <div className="hidden md:block w-48 h-48 rounded-full overflow-hidden border-4 border-primary/10">
-                <img
-                  src={milestone.image}
-                  alt={milestone.title}
-                  className="w-full h-full object-cover"
-                />
-              </div>
-              <div className="flex-1">
-                <div className="bg-secondary rounded-lg p-6 relative">
-                  <div className="absolute -left-3 top-1/2 -translate-y-1/2 w-6 h-6 rounded-full bg-primary hidden md:block" />
-                  <div className="flex items-center gap-4 mb-4">
-                    <span className="text-2xl font-bold text-primary font-serif">{milestone.year}</span>
+        <div className="relative max-w-6xl mx-auto">
+          {/* Timeline Line */}
+          <div className="absolute top-1/2 left-0 w-full h-0.5 bg-primary/20" />
+
+          <div className="flex flex-nowrap gap-8 overflow-x-auto pb-8 px-4 snap-x snap-mandatory">
+            {milestones.map((milestone, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                className="relative flex-none w-80 snap-center"
+              >
+                {/* Timeline Node */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 w-4 h-4 bg-primary rounded-full shadow-lg z-10" />
+                
+                {/* Arrow */}
+                {index < milestones.length - 1 && (
+                  <div className="absolute top-1/2 -translate-y-1/2 left-[calc(100%-2rem)]">
+                    <ArrowRight className="w-8 h-8 text-primary/40" />
+                  </div>
+                )}
+
+                <div className="bg-white rounded-lg shadow-md p-6 mb-8">
+                  <div className="w-full h-40 rounded-lg overflow-hidden mb-4">
+                    <img
+                      src={milestone.image}
+                      alt={milestone.title}
+                      className="w-full h-full object-cover"
+                    />
+                  </div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="text-2xl font-bold text-primary font-serif">
+                      {milestone.year}
+                    </span>
                     <span className="text-sm text-gray-500">({milestone.yearEn})</span>
                   </div>
                   <h3 className="text-xl font-bold mb-2">{milestone.title}</h3>
-                  <p className="text-gray-600">{milestone.description}</p>
+                  <p className="text-gray-600 text-sm">{milestone.description}</p>
                 </div>
-              </div>
-            </motion.div>
-          ))}
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
 
